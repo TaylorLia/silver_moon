@@ -1,0 +1,14 @@
+{ "columns":14,
+ "image":"villageDecoration_.png",
+ "imageheight":176,
+ "imagewidth":224,
+ "margin":0,
+ "name":"villageDecoration_",
+ "spacing":0,
+ "tilecount":154,
+ "tiledversion":"1.8.5",
+ "tileheight":16,
+ "tilewidth":16,
+ "type":"tileset",
+ "version":"1.8"
+}

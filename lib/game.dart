@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:silver_moon/pages/login.page.dart';
-import 'package:silver_moon/widget/button.dart';
-import 'package:silver_moon/widget/first.dart';
-import 'package:silver_moon/widget/forgot.dart';
-import 'package:silver_moon/widget/inputEmail.dart';
-import 'package:silver_moon/widget/password.dart';
-import 'package:silver_moon/widget/textLogin.dart';
-import 'package:silver_moon/widget/verticalText.dart';
 import 'package:silver_moon/pages/profile.dart';
-import 'package:silver_moon/pages/newuser.page.dart';
-
 
 
 
