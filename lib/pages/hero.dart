@@ -1,7 +1,9 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:silver_moon/pages/game.dart';
 import 'package:silver_moon/pages/game_sprit_sheet.dart';
 
-class GameHero extends SimplePlayer{
+class GameHero extends SimplePlayer with ObjectCollision{
   GameHero(Vector2 position) 
   : super(
     position: position,
@@ -11,10 +13,21 @@ class GameHero extends SimplePlayer{
       runLeft: GameSpriteSheet.heroIdleftRun,
       runRight: GameSpriteSheet.heroIdRightRun,
       ),
-      speed: 60,
-      width: 32,
-      height: 32,
-  );
+      speed: 100,
+      size: Vector2(tileSize,tileSize),
+  ) {
+    setupCollision(
+      CollisionConfig(
+        enable: true,
+        collisions: [
+          CollisionArea.rectangle(
+            size: Vector2(10, 10),
+            align: Vector2(3,6),
+          ),
+        ],
+      ),
+    );
+  }
 
 
 }
