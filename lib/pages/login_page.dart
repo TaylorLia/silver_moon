@@ -50,9 +50,7 @@ class _LoginPageState extends State<LoginPage> {
         _focusPassword.unfocus();
       },
       child: Scaffold(
-        appBar: AppBar(
-          title: Text('Autenticação do firebase'),
-        ),
+        
         body: FutureBuilder(         
           future: _initializeFirebase(),
           builder: (context, snapshot) {
@@ -65,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 24.0),
                       child: Text(
-                        'Login',
+                        'Entrar',
                         style: Theme.of(context).textTheme.headline1,
                       ),
                     ),
