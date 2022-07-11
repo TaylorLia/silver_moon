@@ -1,5 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:bonfire/tiled/model/tiled_object_properties.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flame/flame.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,6 +8,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:silver_moon/pages/goblin.dart';
 import 'package:silver_moon/pages/hero.dart';
+
+import 'login_page.dart';
 
 
 
@@ -34,9 +37,33 @@ class MyStatefulWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return BonfireTiledWidget(
+      overlayBuilderMap: {
+        'buttons': ((context, game) {
+          return ElevatedButton(
+            onPressed: ()async{
+                      await FirebaseAuth.instance.signOut();
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        ),
+                      );
+            }, 
+            child: Text('Teste'));
+        })
+      },
       joystick: Joystick(
-        directional: JoystickDirectional(),
+        directional: JoystickDirectional(
+          color: Colors.orange,
+        ),
+        actions: [
+          JoystickAction(
+            actionId: 1,
+            color: Colors.orange,
+            margin: EdgeInsets.all(40), 
+          ),
+        ]
       ),
       map: TiledWorldMap('map/SilverMoon.json',
       objectsBuilder: {
@@ -51,6 +78,9 @@ class MyStatefulWidget extends StatelessWidget {
       zoom: 2.5,
       sizeMovementWindow: Vector2(tileSize*4, tileSize*3),
     ),
+    initialActiveOverlays: [
+      'buttons'      
+    ],
     );
   }
 }

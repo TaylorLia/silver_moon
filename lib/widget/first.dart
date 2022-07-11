@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:silver_moon/pages/newuser.page.dart';
 import 'package:silver_moon/pages/game.dart';
-import 'package:silver_moon/pages/profile.dart';
+import 'package:silver_moon/pages/profile_page.dart';
 
 
 class FirstTime extends StatefulWidget {

@@ -42,4 +42,34 @@ class GameSpriteSheet{
       ),
   );
 
+  static Future<SpriteAnimation> get attackRight => SpriteAnimation.load(
+    'excalibur_.png',
+    SpriteAnimationData.sequenced(
+      amount: 4, 
+      stepTime: 0.15, 
+      textureSize: Vector2(32,32),
+      texturePosition: Vector2(0,32),
+      ),
+  );
+
+  static Future<SpriteAnimation> get attackLeft => SpriteAnimation.load(
+    'excalibur_.png',
+    SpriteAnimationData.sequenced(
+      amount: 4, 
+      stepTime: 0.15, 
+      textureSize: Vector2(32,32),
+      texturePosition: Vector2(0,64),
+      ),
+  );
+
+  static Future<SpriteAnimation> get attackTop => SpriteAnimation.load(
+    'excalibur_.png',
+    SpriteAnimationData.sequenced(
+      amount: 4, 
+      stepTime: 0.15, 
+      textureSize: Vector2(32,32),
+      texturePosition: Vector2(0,96),
+      ),
+  );
+
 }
