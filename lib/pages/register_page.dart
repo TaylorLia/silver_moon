@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:silver_moon/pages/game.dart';
 import 'package:silver_moon/pages/profile_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/fire_auth.dart';
 import '../utils/validator.dart';
@@ -35,8 +36,10 @@ class _RegisterPageState extends State<RegisterPage> {
         _focusPassword.unfocus();
       },
       child: Scaffold(
+        backgroundColor: Color.fromARGB(255, 102, 24, 18),
         appBar: AppBar(
-          title: Text('Registrar'),
+          backgroundColor: Colors.black,
+          title: Text('Registrar',  style: GoogleFonts.pressStart2p(color: Colors.white)),
         ),
         body: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -56,6 +59,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         decoration: InputDecoration(
                           hintText: "Nome",
+                          hintStyle: GoogleFonts.pressStart2p(),
                           errorBorder: UnderlineInputBorder(
                             borderRadius: BorderRadius.circular(6.0),
                             borderSide: BorderSide(
@@ -73,6 +77,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         decoration: InputDecoration(
                           hintText: "Email",
+                            hintStyle: GoogleFonts.pressStart2p(),
                           errorBorder: UnderlineInputBorder(
                             borderRadius: BorderRadius.circular(6.0),
                             borderSide: BorderSide(
@@ -91,6 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         decoration: InputDecoration(
                           hintText: "Senha",
+                            hintStyle: GoogleFonts.pressStart2p(),
                           errorBorder: UnderlineInputBorder(
                             borderRadius: BorderRadius.circular(6.0),
                             borderSide: BorderSide(
@@ -106,6 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               children: [
                                 Expanded(
                                   child: ElevatedButton(
+                                     style: ElevatedButton.styleFrom(primary: Colors.black),
                                     onPressed: () async {
                                       setState(() {
                                         _isProcessing = true;
@@ -139,7 +146,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     },
                                     child: Text(
                                       'Cadastrar',
-                                      style: TextStyle(color: Colors.white),
+                                        style: GoogleFonts.pressStart2p(color: Colors.white),
                                     ),
                                   ),
                                 ),

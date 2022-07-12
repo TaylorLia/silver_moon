@@ -63,7 +63,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
           child: Column(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(top: 15),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height/2-40,
                 decoration: BoxDecoration(
@@ -91,11 +91,11 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                       children: <Widget>[
 
                         Padding(
-                          padding: const EdgeInsets.only(left: 130),
+                          padding: const EdgeInsets.only(left: 120),
                           child: Container(
 
-                            height: 105,
-                            width: 105,
+                            height: 100,
+                            width: 100,
                             decoration: BoxDecoration(
                                 color: Color.fromARGB(255, 84, 16, 11),
                                 borderRadius: BorderRadius.circular(52.5),
@@ -118,11 +118,11 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
 
                       ],
                     ),
-                    SizedBox(height: 10,),
-                    Text('@usuarioteste', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),),
+                    SizedBox(),
+                    Text('', style: TextStyle(color: Colors.white, ),),
                     Padding(
-                      padding: const EdgeInsets.only( bottom: 35),
-                      child: Text('Usuário Teste', style: TextStyle(color: Colors.white,fontSize: 23, fontWeight: FontWeight.bold  ),),
+                      padding: const EdgeInsets.only( bottom: 10),
+                      child: Text('', style: TextStyle(color: Colors.white,fontSize: 23, fontWeight: FontWeight.bold  ),),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 20, right: 20),

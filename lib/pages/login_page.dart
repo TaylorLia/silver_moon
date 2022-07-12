@@ -1,9 +1,13 @@
+import 'dart:ui';
+
+import 'package:bonfire/background/background_color_game.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:silver_moon/pages/game.dart';
 import 'package:silver_moon/pages/profile_page.dart';
 import 'package:silver_moon/pages/register_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/fire_auth.dart';
 import '../utils/validator.dart';
@@ -33,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => ProfilePage(
-            user: user,
+            user: user, title: '',
           ),
         ),
       );
@@ -50,6 +54,7 @@ class _LoginPageState extends State<LoginPage> {
         _focusPassword.unfocus();
       },
       child: Scaffold(
+        backgroundColor:Color.fromARGB(255, 102, 24, 18),
         
         body: FutureBuilder(         
           future: _initializeFirebase(),
@@ -64,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
                       padding: const EdgeInsets.only(bottom: 24.0),
                       child: Text(
                         'Entrar',
-                        style: Theme.of(context).textTheme.headline1,
+                        style: GoogleFonts.pressStart2p(fontSize: 50),
                       ),
                     ),
                     Form(
@@ -79,6 +84,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             decoration: InputDecoration(
                               hintText: "Email",
+                              hintStyle: GoogleFonts.pressStart2p(),
                               errorBorder: UnderlineInputBorder(
                                 borderRadius: BorderRadius.circular(6.0),
                                 borderSide: BorderSide(
@@ -97,6 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             decoration: InputDecoration(
                               hintText: "Senha",
+                              hintStyle: GoogleFonts.pressStart2p(),
                               errorBorder: UnderlineInputBorder(
                                 borderRadius: BorderRadius.circular(6.0),
                                 borderSide: BorderSide(
@@ -114,6 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                                   children: [
                                     Expanded(
                                       child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(primary: Colors.black),
                                         onPressed: () async {
                                           _focusEmail.unfocus();
                                           _focusPassword.unfocus();
@@ -148,13 +156,14 @@ class _LoginPageState extends State<LoginPage> {
                                         },
                                         child: Text(
                                           'Entrar',
-                                          style: TextStyle(color: Colors.white),
+                                          style: GoogleFonts.pressStart2p(color: Colors.white),
                                         ),
                                       ),
                                     ),
                                     SizedBox(width: 24.0),
                                     Expanded(
                                       child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(primary: Colors.black),
                                         onPressed: () {
                                           Navigator.of(context).push(
                                             MaterialPageRoute(
@@ -165,7 +174,7 @@ class _LoginPageState extends State<LoginPage> {
                                         },
                                         child: Text(
                                           'Cadastro',
-                                          style: TextStyle(color: Colors.white),
+                                           style: GoogleFonts.pressStart2p(color: Colors.white),
                                         ),
                                       ),
                                     ),

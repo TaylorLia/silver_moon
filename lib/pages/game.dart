@@ -8,7 +8,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:silver_moon/pages/goblin.dart';
 import 'package:silver_moon/pages/hero.dart';
-
+import 'package:silver_moon/pages/profile.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'login_page.dart';
 
 
@@ -42,15 +43,16 @@ class MyStatefulWidget extends StatelessWidget {
       overlayBuilderMap: {
         'buttons': ((context, game) {
           return ElevatedButton(
+            style: ElevatedButton.styleFrom(primary: Color.fromARGB(255, 84, 16, 11)),
             onPressed: ()async{
                       await FirebaseAuth.instance.signOut();
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(
-                          builder: (context) => LoginPage(),
+                          builder: (context) => ProfilePage(title: '',),
                         ),
                       );
             }, 
-            child: Text('Teste'));
+            child: Text('Perfil', style: GoogleFonts.pressStart2p(),));
         })
       },
       joystick: Joystick(
